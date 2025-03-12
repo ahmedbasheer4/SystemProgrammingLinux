@@ -7,7 +7,7 @@ int main()
     if ((getcwd(cwd, PATH_MAX)) != NULL) {
         printf("%s\n", cwd); // Success                                                                                                                                        exit(0); // Success
     } else {                                                                                                                                                        printf("Error: Could not get current working directory");
-        exit(-1); // Failure
+        return EXIT_FAILURE; // Failure
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
