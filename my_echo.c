@@ -7,7 +7,6 @@ int main(int argc, char *argv[])
     {
         // No arguments provided, just print a newline
         printf("\n");
-        exit(-2);
     }
     else
     {
@@ -22,5 +21,5 @@ int main(int argc, char *argv[])
         }
         printf("\n"); // Add a newline at the end
     }
-    return 1;
+    return 0;
 }
