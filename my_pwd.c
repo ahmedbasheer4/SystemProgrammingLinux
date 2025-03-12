@@ -9,5 +9,5 @@ int main()
     } else {                                                                                                                                                        printf("Error: Could not get current working directory");
         exit(-1); // Failure
     }
-    return 1;
+    return 0;
 }
