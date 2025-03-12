@@ -10,6 +10,7 @@ The following utilities are included in this repository:
 - **`my_echo`**: Prints its command-line arguments to standard output, separated by spaces, followed by a newline.
 - **`my_pwd`**: Prints the current working directory to standard output, mimicking the `pwd` command.
 - **`my_mv`**: Moves a file from a source location to a destination location. If the rename operation fails (e.g., across different filesystems), it falls back to copying and deleting the original file.
+- **`myFemtoShell`**: A simple shell that supports `echo` and `exit` commands.
 
 ## Compilation
 
@@ -20,6 +21,7 @@ gcc my_cp.c -o my_cp
 gcc my_echo.c -o my_echo
 gcc my_pwd.c -o my_pwd
 gcc mv_command.c -o my_mv
+gcc femto_shell.c -o myFemtoShell
 ```
 
 ## Usage Examples
@@ -103,6 +105,25 @@ File moved successfully (copied & deleted).
 Error opening source file 'non_existing.txt'
 ```
 
+---
+
+### `myFemtoShell` - A simple shell
+```bash
+./myFemtoShell
+```
+**Example Session:**
+```
+Welcome to MiniShell! Type 'exit' to quit.
+MiniShell > echo Hello my shell
+Hello my shell
+MiniShell > echo What can you do?
+What can you do?
+MiniShell > ls
+Invalid command
+MiniShell > exit
+Good Bye :)
+```
+
 ## Error Handling and Exit Codes
 
 | Exit Code | Description |
@@ -117,6 +138,7 @@ All errors, including file open failures, write failures, and deletion failures,
 - These utilities do not handle symbolic links, directories, or special file types.
 - No interactive prompts (e.g., confirmation before overwriting files).
 - Minimal error checking (e.g., disk space availability is not verified before writing).
+- `myFemtoShell` does not support external commands beyond `echo` and `exit`.
 
 ## Future Improvements
 
@@ -125,6 +147,7 @@ All errors, including file open failures, write failures, and deletion failures,
 - Improve error handling with more descriptive messages using `perror()`.
 - Use standard `PATH_MAX` from `<limits.h>` in `my_pwd`.
 - Add support for additional options like `-i` (interactive) and `-v` (verbose).
+- Extend `myFemtoShell` to execute external commands using `execvp`.
 
 ---
 
