@@ -81,7 +81,7 @@ Hello, world!
 ```
 **Expected output:**
 ```
-File moved successfully (renamed).
+File moved successfully.
 ```
 
 **Cross-filesystem move:**
@@ -90,8 +90,8 @@ File moved successfully (renamed).
 ```
 **Output:**
 ```
-Cross device operation, copy and delete will be done
-File moved successfully (copied and deleted).
+Cross device operation, copying and deleting...
+File moved successfully (copied & deleted).
 ```
 
 **Error case:**
@@ -108,13 +108,14 @@ Error opening source file 'non_existing.txt'
 | Exit Code | Description |
 |-----------|------------|
 |  0        | Success |
-| -2        | Incorrect number of arguments |
-| -3        | Error opening source file |
-| -4        | Error opening destination file |
-| -5        | Error writing to destination file |
-| -6        | Incomplete write to destination file |
-| -7        | Error reading from source file |
-| -8        | Error deleting source file after move |
+|  1        | General failure (replaces negative exit codes) |
+|  2        | Incorrect number of arguments |
+|  3        | Error opening source file |
+|  4        | Error opening destination file |
+|  5        | Error writing to destination file |
+|  6        | Incomplete write to destination file |
+|  7        | Error reading from source file |
+|  8        | Error deleting source file after move |
 
 ## Limitations
 
@@ -126,10 +127,10 @@ Error opening source file 'non_existing.txt'
 
 - Add support for directories in `my_cp` and `my_mv`.
 - Implement `-r` (recursive) option for `my_cp`.
-- Improve error handling with more descriptive messages.
+- Improve error handling with more descriptive messages using `perror()`.
+- Use standard `PATH_MAX` from `<limits.h>` in `my_pwd`.
 - Add support for additional options like `-i` (interactive) and `-v` (verbose).
 
 ---
 
 This repository serves as a foundational exercise in system programming and file manipulation using C. Feel free to contribute or suggest improvements!
-
