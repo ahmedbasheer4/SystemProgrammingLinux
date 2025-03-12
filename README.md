@@ -108,14 +108,9 @@ Error opening source file 'non_existing.txt'
 | Exit Code | Description |
 |-----------|------------|
 |  0        | Success |
-|  1        | General failure (replaces negative exit codes) |
-|  2        | Incorrect number of arguments |
-|  3        | Error opening source file |
-|  4        | Error opening destination file |
-|  5        | Error writing to destination file |
-|  6        | Incomplete write to destination file |
-|  7        | Error reading from source file |
-|  8        | Error deleting source file after move |
+|  1        | General failure (returned for all errors) |
+
+All errors, including file open failures, write failures, and deletion failures, will return `1` (`EXIT_FAILURE`).
 
 ## Limitations
 
@@ -134,3 +129,4 @@ Error opening source file 'non_existing.txt'
 ---
 
 This repository serves as a foundational exercise in system programming and file manipulation using C. Feel free to contribute or suggest improvements!
+
