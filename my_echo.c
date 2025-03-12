@@ -21,5 +21,5 @@ int main(int argc, char *argv[])
         }
         printf("\n"); // Add a newline at the end
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
