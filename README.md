@@ -37,6 +37,86 @@ gcc nano_shell.c -o myNanoShell
 
 ## Usage Examples
 
+### `my_cp` - Copy a file
+```bash
+./my_cp source.txt destination.txt
+```
+**Expected output:**
+```
+File copied successfully
+```
+
+**Error case:**
+```bash
+./my_cp non_existing.txt destination.txt
+```
+**Output:**
+```
+Error opening source file 'non_existing.txt'
+```
+
+---
+
+### `my_echo` - Print text
+```bash
+./my_echo Hello, world!
+```
+**Expected output:**
+```
+Hello, world!
+```
+
+**Edge case:**
+```bash
+./my_echo
+```
+**Output:**
+```
+
+```
+
+---
+
+### `my_pwd` - Print working directory
+```bash
+./my_pwd
+```
+**Expected output (example):**
+```
+/home/user/projects
+```
+
+---
+
+### `my_mv` - Move a file
+```bash
+./my_mv source.txt new_location.txt
+```
+**Expected output:**
+```
+File moved successfully.
+```
+
+**Cross-filesystem move:**
+```bash
+./my_mv source.txt /mnt/external_drive/destination.txt
+```
+**Output:**
+```
+Cross device operation, copying and deleting...
+File moved successfully (copied & deleted).
+```
+
+**Error case:**
+```bash
+./my_mv non_existing.txt destination.txt
+```
+**Output:**
+```
+Error opening source file 'non_existing.txt'
+```
+
+---
 ### `myFemtoShell` - A simple shell
 ```bash
 ./myFemtoShell
