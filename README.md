@@ -117,6 +117,7 @@ Error opening source file 'non_existing.txt'
 ```
 
 ---
+
 ### `myFemtoShell` - A simple shell
 ```bash
 ./myFemtoShell
@@ -212,6 +213,7 @@ Good Bye :)
   - Command history using arrow keys.
   - Support for command aliasing.
   - Improved handling of complex command chaining and redirections.
+
 ---
 
 This repository serves as a foundational exercise in system programming and file manipulation using C. Feel free to contribute or suggest improvements!
