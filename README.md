@@ -212,17 +212,6 @@ Good Bye :)
   - Command history using arrow keys.
   - Support for command aliasing.
   - Improved handling of complex command chaining and redirections.
-
-- Add support for directories in `my_cp` and `my_mv`.
-- Implement `-r` (recursive) option for `my_cp`.
-- Improve error handling with more descriptive messages using `perror()`.
-- Use standard `PATH_MAX` from `<limits.h>` in `my_pwd`.
-- Add support for additional options like `-i` (interactive) and `-v` (verbose).
-- Extend `myNanoShell` with:
-  - Background process handling (`&`).
-  - Environment variable support (`export VAR=value`).
-  - Enhanced scripting capabilities.
-
 ---
 
 This repository serves as a foundational exercise in system programming and file manipulation using C. Feel free to contribute or suggest improvements!
